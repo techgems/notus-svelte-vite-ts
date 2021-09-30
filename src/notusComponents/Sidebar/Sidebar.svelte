@@ -1,13 +1,31 @@
 <script>
   import { link } from "svelte-routing";
 
-  import { library } from '@fortawesome/fontawesome-svg-core';
-  import { faBars, faTimes, faTv, faTools, faTable, faFingerprint, faUserCircle, faClipboardList, faNewspaper } from '@fortawesome/free-solid-svg-icons';
-  import { FontAwesomeIcon, FontAwesomeLayers } from 'fontawesome-svelte';
+  import { library } from "@fortawesome/fontawesome-svg-core";
+  import {
+    faBars,
+    faTimes,
+    faTv,
+    faTools,
+    faTable,
+    faFingerprint,
+    faUserCircle,
+    faClipboardList,
+    faNewspaper,
+  } from "@fortawesome/free-solid-svg-icons";
+  import { FontAwesomeIcon, FontAwesomeLayers } from "fontawesome-svelte";
 
-  library.add(faBars, faTimes, faTv, faTools, faTable, faFingerprint, faUserCircle, faClipboardList, faNewspaper);
-
-  const LaCarteLogo = "../assets/logos/Lacarte.svg";
+  library.add(
+    faBars,
+    faTimes,
+    faTv,
+    faTools,
+    faTable,
+    faFingerprint,
+    faUserCircle,
+    faClipboardList,
+    faNewspaper
+  );
 
   // core components
   import NotificationDropdown from "../../notusComponents/Dropdowns/NotificationDropdown.svelte";
@@ -32,21 +50,17 @@
     <button
       class="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent"
       type="button"
-      on:click={() => toggleCollapseShow('bg-white m-2 py-3 px-6')}
+      on:click={() => toggleCollapseShow("bg-white m-2 py-3 px-6")}
     >
-    <FontAwesomeIcon icon={faBars} />
+      <FontAwesomeIcon icon={faBars} />
     </button>
     <!-- Brand -->
     <a
       use:link
-      class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold"
+      class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
       href="/"
     >
-      <img
-        src="{LaCarteLogo}"
-        class="h-16"
-        alt="..."
-      />
+      Notus Svelte
     </a>
     <!-- User -->
     <ul class="md:hidden items-center flex flex-wrap list-none">
@@ -79,9 +93,9 @@
             <button
               type="button"
               class="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent"
-              on:click={() => toggleCollapseShow('hidden')}
+              on:click={() => toggleCollapseShow("hidden")}
             >
-            <FontAwesomeIcon icon={faTimes} />
+              <FontAwesomeIcon icon={faTimes} />
             </button>
           </div>
         </div>
@@ -112,11 +126,20 @@
           <a
             use:link
             href="/admin/dashboard"
-            class="text-xs uppercase py-3 font-bold block {location.href.indexOf('/admin/dashboard') !== -1 ? 'text-red-500 hover:text-red-600':'text-blueGray-700 hover:text-blueGray-500'}"
+            class="text-xs uppercase py-3 font-bold block {location.href.indexOf(
+              '/admin/dashboard'
+            ) !== -1
+              ? 'text-red-500 hover:text-red-600'
+              : 'text-blueGray-700 hover:text-blueGray-500'}"
           >
-          <FontAwesomeLayers class="mr-2 text-sm {location.href.indexOf('/admin/dashboard') !== -1 ? 'opacity-75' : 'text-blueGray-300'}"> 
-            <FontAwesomeIcon icon={faTv} />
-          </FontAwesomeLayers>
+            <FontAwesomeLayers
+              class="mr-2 text-sm {location.href.indexOf('/admin/dashboard') !==
+              -1
+                ? 'opacity-75'
+                : 'text-blueGray-300'}"
+            >
+              <FontAwesomeIcon icon={faTv} />
+            </FontAwesomeLayers>
             Dashboard
           </a>
         </li>
@@ -125,9 +148,18 @@
           <a
             use:link
             href="/admin/settings"
-            class="text-xs uppercase py-3 font-bold block {location.href.indexOf('/admin/settings') !== -1 ? 'text-red-500 hover:text-red-600':'text-blueGray-700 hover:text-blueGray-500'}"
+            class="text-xs uppercase py-3 font-bold block {location.href.indexOf(
+              '/admin/settings'
+            ) !== -1
+              ? 'text-red-500 hover:text-red-600'
+              : 'text-blueGray-700 hover:text-blueGray-500'}"
           >
-            <FontAwesomeLayers class="mr-2 text-sm {location.href.indexOf('/admin/settings') !== -1 ? 'opacity-75' : 'text-blueGray-300'}">
+            <FontAwesomeLayers
+              class="mr-2 text-sm {location.href.indexOf('/admin/settings') !==
+              -1
+                ? 'opacity-75'
+                : 'text-blueGray-300'}"
+            >
               <FontAwesomeIcon icon={faTools} />
             </FontAwesomeLayers>
             Settings
@@ -138,9 +170,17 @@
           <a
             use:link
             href="/admin/tables"
-            class="text-xs uppercase py-3 font-bold block {location.href.indexOf('/admin/tables') !== -1 ? 'text-red-500 hover:text-red-600':'text-blueGray-700 hover:text-blueGray-500'}"
+            class="text-xs uppercase py-3 font-bold block {location.href.indexOf(
+              '/admin/tables'
+            ) !== -1
+              ? 'text-red-500 hover:text-red-600'
+              : 'text-blueGray-700 hover:text-blueGray-500'}"
           >
-            <FontAwesomeLayers class="mr-2 text-sm {location.href.indexOf('/admin/tables') !== -1 ? 'opacity-75' : 'text-blueGray-300'}">
+            <FontAwesomeLayers
+              class="mr-2 text-sm {location.href.indexOf('/admin/tables') !== -1
+                ? 'opacity-75'
+                : 'text-blueGray-300'}"
+            >
               <FontAwesomeIcon icon={faTable} />
             </FontAwesomeLayers>
             Tables

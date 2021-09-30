@@ -1,9 +1,7 @@
 import sveltePreprocess from 'svelte-preprocess'
 
-const config = {
-  preprocess: [sveltePreprocess({
-    "postcss": true
-  })]
-};
-
-export default config;
+export default {
+  // Consult https://github.com/sveltejs/svelte-preprocess
+  // for more information about preprocessors
+  preprocess: sveltePreprocess()
+}

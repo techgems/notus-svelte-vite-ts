@@ -1,5 +1,5 @@
-const plugin = require("tailwindcss/plugin");
-const colors = require("tailwindcss/colors");
+const plugin = require("windicss/plugin");
+const colors = require('windicss/colors')
 
 module.exports = {
   purge: {
@@ -23,12 +23,6 @@ module.exports = {
       ...colors,
     },
     extend: {
-      colors: {
-        primary: {
-          DEFAULT: "#ED186A",
-          text: "#FFFFFF"
-        }
-      },
       minHeight: {
         "screen-75": "75vh",
       },
@@ -102,7 +96,7 @@ module.exports = {
     "disabled",
   ],
   plugins: [
-    require("@tailwindcss/forms"),
+    require("windicss/plugin/forms"),
     plugin(function ({ addComponents, theme }) {
       const screens = theme("screens", {});
       addComponents([
